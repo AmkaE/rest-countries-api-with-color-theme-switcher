@@ -20,6 +20,9 @@ module.exports = {
 			rotate: {
 				225: '225deg',
 			},
+			borderWidth: {
+				5: '5px',
+			},
 		},
 		screens: {
 			'xsm': '375px',

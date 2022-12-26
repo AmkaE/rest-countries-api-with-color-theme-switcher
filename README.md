@@ -40,8 +40,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution URL](https://your-solution-url.com)
-- Live Site URL: [Live Site URL](https://your-live-site-url.com)
+- Solution URL: [Solution URL](https://www.frontendmentor.io/solutions/rest-countries-api-with-color-theme-switcher-Eh7jXpGi6F)
+- Live Site URL: [Live Site URL](https://countries-jade.vercel.app/)
 
 ## My process
 

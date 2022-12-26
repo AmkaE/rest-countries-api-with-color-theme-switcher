@@ -21,6 +21,7 @@ const CountryDetails: FC<CountryDetailsProps> = ({
 	const languages = country?.languages;
 	const borders = country?.borders;
 	const flags = country?.flags;
+	const googleMaps = country?.maps.googleMaps;
 
 	for (const key in languages) {
 		_languages.push(languages[key]);
@@ -42,7 +43,11 @@ const CountryDetails: FC<CountryDetailsProps> = ({
 				className='md:max-w-2xl xmd:max-w-lg w-full xmd:h-96 sm:h-80 h-60 bg-gray-500 shadow-lg'
 			/>
 			<div className='flex flex-col gap-8 lg:p-4 pt-4 bg-whites md:max-w-2xl w-full justify-between'>
-				<h1 className='text-2xl font-bold dark:text-white-dm-text'>{name}</h1>
+				<h1 className='text-2xl font-bold dark:text-white-dm-text underline decoration-dotted decoration-gray-600'>
+					<a href={googleMaps} target='_blank'>
+						{name}
+					</a>
+				</h1>
 				<section className='flex md:flex-row flex-col justify-between gap-8'>
 					{/* details right */}
 					<section>

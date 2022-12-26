@@ -31,6 +31,7 @@ const CountryDetails: FC<CountryProps> = ({ country }) => {
 		<section className='mt-16 flex xl:flex-row flex-col md:items-center justify-between gap-4 overflow-hidden'>
 			<img
 				src={flags && flags[1]}
+				alt={`${name} flag`}
 				className='md:max-w-2xl xmd:max-w-lg w-full xmd:h-96 sm:h-80 h-60 bg-gray-500 shadow-lg'
 			/>
 			<div className='flex flex-col gap-8 lg:p-4 pt-4 bg-whites md:max-w-2xl w-full justify-between'>

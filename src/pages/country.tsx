@@ -9,7 +9,7 @@ import Spinner from '../components/Spinner';
 const Country = () => {
 	const params = useParams();
 	const navigate = useNavigate();
-	const countryName = params.countryName?.replace(/-/g, ' ')!;
+	const countryName = params.countryName?.replaceAll(/-/g, ' ')!;
 
 	const { isLoading, country, dispatch } = useContext(CountriesContext);
 

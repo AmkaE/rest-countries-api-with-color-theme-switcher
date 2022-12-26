@@ -9,12 +9,16 @@ const CountryItem: FC<CountryProps> = ({ country }) => {
 
 	return (
 		<Link
-			to={`/${name.official.toLowerCase().replace(' ', '-')}`}
+			to={`/${name.official.toLowerCase().replaceAll(' ', '-')}`}
 			className='border max-w-xs w-full shadow-md rounded-md overflow-hidden'
 		>
-			<img src={(flags as string[])[1]} className='h-52 w-full' />
+			<img
+				src={(flags as string[])[1]}
+				alt={`${name.official} flag`}
+				className='h-52 w-full'
+			/>
 			<div className='w-full flex flex-col gap-4 p-4 bg-very-light-gray dark:bg-dark-blue-dm-el dark:text-white-dm-text'>
-				<h3 className='text-xl font-bold capitalize'>{name.common}</h3>
+				<h3 className='text-2xl font-bold capitalize'>{name.common}</h3>
 				<div>
 					<span className='text-sm font-bold mr-2'>Population:</span>
 					<span className='text-gray-500'>{formatter.format(population)}</span>

@@ -1,9 +1,12 @@
-import type { CountryProps } from '../types/country';
+import type { CountryDetailsProps } from '../types/country';
 import { FC } from 'react';
 
 const formatter = new Intl.NumberFormat('en-US');
 
-const CountryDetails: FC<CountryProps> = ({ country }) => {
+const CountryDetails: FC<CountryDetailsProps> = ({
+	country,
+	findCountryByFifaName,
+}) => {
 	const _languages = [];
 	const _currencies = [];
 
@@ -26,6 +29,10 @@ const CountryDetails: FC<CountryProps> = ({ country }) => {
 	for (const key in currencies) {
 		_currencies.push(currencies[key]);
 	}
+
+	const handleBorderClick = (border: string) => {
+		findCountryByFifaName(border);
+	};
 
 	return (
 		<section className='mt-16 flex xl:flex-row flex-col md:items-center justify-between gap-4 overflow-hidden'>
@@ -106,14 +113,19 @@ const CountryDetails: FC<CountryProps> = ({ country }) => {
 						Border Countries:
 					</h1>
 					<div className='flex xmd:flex-row flex-col flex-wrap gap-4 text-sm'>
-						{borders?.map(border => (
-							<span
-								key={border}
-								className='rounded-sm shadow-md px-4 py-1 max-w-fit bg-very-light-gray dark:bg-dark-blue-dm-el dark:text-white-dm-text'
-							>
-								{border}
-							</span>
-						))}
+						{!borders ? (
+							<span className='text-gray-500'>No border countries</span>
+						) : (
+							borders?.map(border => (
+								<span
+									key={border}
+									onClick={() => handleBorderClick(border)}
+									className='cursor-pointer rounded-sm shadow-md px-4 py-1 max-w-fit bg-very-light-gray dark:bg-dark-blue-dm-el dark:text-white-dm-text'
+								>
+									{border}
+								</span>
+							))
+						)}
 					</div>
 				</div>
 			</div>

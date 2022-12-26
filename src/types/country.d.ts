@@ -29,6 +29,10 @@ interface CountryDetailsProps {
 interface CountryProps {
 	country: CountryData;
 }
+interface CountryDetailsProps {
+	country: CountryData;
+	findCountryByFifaName: (fifaName: string) => void;
+}
 
 interface CountriesProviderProps {
 	children: ReactNode;
